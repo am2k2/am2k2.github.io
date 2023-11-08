@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel = "preconnect" href = "https://fonts.googleapis.com">
+		<link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+		<link href = "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Poppins:wght@500&display=swap" rel = "stylesheet">
+        
+        <title> Country Guide </title>
+
+        <style>
+            @font-face
+            {
+                font-family : CarnevalFont;
+                src : url(Carnevalee\ Freakshow.ttf);
+            }
+
+            *
+			{
+				margin : 0;
+				padding : 0;
+			}	
+				
+			body
+			{
+				font-family: 'Poppins', sans-serif;
+                background-color : #f0f2f5;
+			}
+			
+			nav
+			{
+				display : flex;
+				justify-content : space-around;
+				align-items : center;
+				height : 9.3708vh;
+				background-color : #ae9cff;
+				color : black;
+			}
+			
+			.leftheader
+			{
+				font-size : 3.5rem;
+                font-family : CarnevalFont;
+			}
+			
+			ul
+			{
+				display : flex;
+				justify-content : center;
+				font-size : 1.1rem;
+			}
+			
+			ul li
+			{
+				list-style : none;
+				margin : 0 2.1484vw;
+			}
+			
+			a
+			{
+				text-decoration : none;
+				color : black;				
+			}
+
+            main
+            {
+                display : flex;
+                justify-content : space-around;
+            }
+
+            .container
+            {
+                width : 52.083%;
+                height : 73.6278vh;
+                margin-top : 4.4846vh;
+                border-radius : 20px;
+                display : flex;
+                flex-direction : column;
+                align-items : center;
+                background-color : white;
+            }
+
+            .search
+            {
+                width : 68.8%;
+                height : 13.3869vh;
+                display : flex;
+                justify-content : space-between;
+                align-items : center;
+            }
+
+            input
+            {
+                width : 74.4913%;
+                height : 6.0241vh;
+                border-radius : 8px;
+                color : gray;
+                background-color : whitesmoke;
+                font-family : 'Poppins', sans-serif;
+                font-size : 0.9rem;
+                border : 2px solid #ae9cff;
+                text-indent : 15px;
+            }
+
+            button
+            {
+                width : 23.619%;
+                height : 6.0241vh;
+                border-radius : 8px;
+                font-family : 'Poppins', sans-serif;
+                font-size : 1rem;
+                color : whitesmoke;
+                background-color : #ae9cff;
+                border : none;
+                cursor: pointer;
+            }
+
+            .result
+            {
+                width : 68.8%;
+                height : 60.2410vh;
+                display : flex;
+                flex-direction : column;
+                align-items : center;
+                color : gray;
+            }
+
+            .flag
+            {
+                width : 60%;
+                height : 23.4270vh;
+                display : flex;
+                align-items : center;
+                justify-content : space-around;
+                border-radius : 10px;
+                background-color : whitesmoke;
+            }
+
+            #image
+            {
+                width : 80%;
+            }
+
+            .country
+            {
+                width : 60%;
+                height : 5.3548vh;
+                font-size : 3.8rem;
+                display : flex;
+                justify-content : space-around;
+                align-items : center;
+                color : black;
+                font-family : CarnevalFont;
+            }
+
+            .capital
+            {
+                width : 100%;
+                height : 5.3548vh;
+                display : flex;
+                align-items : center;
+                margin-top : 2.6774vh;
+                gap : 10px;
+            }
+
+            #capital
+            {
+                overflow: auto;
+            }
+
+            .continent
+            {
+                width : 100%;
+                height : 5.3548vh;
+                display : flex;
+                align-items : center;
+                gap : 10px;
+            }
+            
+            .population
+            {
+                width : 100%;
+                height : 5.3548vh;
+                display : flex;
+                align-items : center;
+                gap : 10px;
+            }
+
+            .currency
+            {
+                width : 100%;
+                height : 5.3548vh;
+                display : flex;
+                align-items : center;
+                gap : 10px;
+            }
+
+            .languages
+            {
+                width : 100%;
+                height : 5.3548vh;
+                display : flex;
+                align-items : center;
+                gap : 10px;
+                overflow: auto;
+            }
+
+            footer
+			{
+				background-color : #ae9cff;
+				height : 8.0321vh;
+				display : flex;
+				align-items : center;
+				margin-top : 4.4846vh;
+				color : black;
+                font-size : 1.1rem;
+			}
+			
+			footer div
+			{
+				margin-left : 82.6823vw;
+			}
+
+            @media only screen and (min-width: 320px)
+            {
+                html
+                {
+                    font-size : 130%;
+                }
+
+                .leftheader
+                {
+                    font-size : 600%;
+                }
+
+                .rightheader
+                {
+                    display : none;
+                }
+
+                .container
+                {
+                    width : 84%;
+                }
+
+                .search, .result
+                {
+                    width : 85%;
+                }
+
+                input
+                {
+                    background-color : transparent;
+                    width : 65%;
+                    height : 35%;
+                    font-size : 180%;
+                    border-radius : 15px;
+                    border : 5px solid #ae9cff;
+                }
+
+                .flag
+                {
+                    width : 90%;
+                    height : 38%;
+                }
+
+                .country
+                {
+                    font-size : 550%;
+                    width : 140%;
+                }
+
+                #image
+                {
+                    width : 90%;
+                    height : 80%;
+                }
+
+                .capital
+                {
+                    font-size : 190%;
+                    gap : 4%;
+                    margin-top : 6%;
+                    align-items : flex-end;
+                }
+
+                .continent, .population, .continent, .currency
+                {
+                    font-size : 190%;
+                    gap : 4%;
+                    align-items : flex-end;
+                }
+
+                .languages
+                {
+                    font-size : 190%;
+                    gap : 4%;
+                    overflow : auto;
+                    height : 12%;
+                }
+
+                button
+                {
+                    width : 30%;
+                    height : 35%;
+                    font-size : 195%;
+                    border-radius : 15px;
+                }
+
+                footer
+                {
+                    justify-content : space-around;
+                }
+
+                footer div
+                {
+                    margin-left : 0px;
+                    font-size : 150%;
+                }
+            }
+
+            @media only screen and (min-width: 1000px)
+            {
+                html
+                {
+                    font-size : 100%;
+                }
+
+                .leftheader
+                {
+                    font-size : 3.5rem;
+                }
+
+                .rightheader
+                {
+                    display : block;
+                }
+
+                .container
+                {
+                    width : 52.083%;
+                }
+
+                .search, .result
+                {
+                    width : 68.8%;
+                }
+
+                input
+                {
+                    width : 74.4913%;
+                    height : 6.0241vh;
+                    font-size : 0.9rem;
+                    border : 2px solid #ae9cff;
+                    border-radius : 8px;
+                }
+
+                .flag
+                {
+                    width : 60%;
+                }
+
+                .country
+                {
+                    font-size : 3.5rem;
+                    width : 60%;
+                }
+
+                #image
+                {
+                    width : 80%;
+                    height: 100%;
+                }
+
+                .capital
+                {
+                    font-size : 1.1rem;
+                    gap : 10px;
+                    margin-top : 2vh;
+                }
+
+                .continent, .population, .continent, .currency
+                {
+                    font-size : 1.1rem;
+                    gap : 10px;
+                }
+
+                .languages
+                {
+                    font-size : 1.1rem;
+                    gap : 10px;
+                }
+
+                button
+                {
+                    width : 23.619%;
+                    height : 6.0241vh;
+                    font-size : 1rem;
+                    border-radius : 8px;
+                }
+
+                footer
+                {
+                    justify-content : flex-start;
+                }
+
+                footer div
+                {
+                    margin-left : 82.6823vw;
+                    font-size : 1.1rem;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+				<div class = "leftheader"> Country Guide </div>
+				
+				<div class = "rightheader"> 
+					<ul>
+						<li> <a href = "index.html"> Home </a> </li>
+						<li> <a href = "https://en.wikipedia.org/wiki/Country" target = "_blank"> About </a> </li>
+						<li> <a href = "https://github.com/am2k2" target = "_blank"> Github </a> </li>
+						<li>  &#9993 apurbamondal2k2@gmail.com </li>						
+					</ul>
+				</div>
+			</nav>
+        </header>
+
+        <main>
+            <div class = "container">
+                <div class = "search">
+                    <input id = "input" type = "text" placeholder = "Enter a Country">
+
+                    <button onclick = "search();"> Go </button>
+                </div>
+
+                <div class = "result">
+                    <div class = "flag">
+                        <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/F1_chequered_flag.svg/330px-F1_chequered_flag.svg.png" id = "image">
+                    </div>
+
+                    <div class = "country" id = "country">
+                        Country
+                    </div>
+
+                    <div class = "capital">
+                        <p> Capital(s): </p> 
+                        <p id = "capital"> NA </p>
+                    </div>
+
+                    <div class = "continent">
+                        <p> Continent(s): </p> 
+                        <p id = "continent"> NA </p>
+                    </div>
+
+                    <div class = "population">
+                        <p> Population: </p> 
+                        <p id = "population"> NA </p>
+                    </div>
+
+                    <div class = "currency">
+                        <p> Currencies: </p> 
+                        <p id = "currency"> NA </p>
+                    </div>
+
+                    <div class = "languages">
+                        <p> Language(s): </p> 
+                        <p id = "languages"> NA </p>
+                    </div>               
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div>
+				&#169 AM's Portfolio 2023
+			</div>
+        </footer>
+
+        <script>
+            function search()
+            {
+                var country = document.getElementById("input").value;
+                var capital = "";
+                var continent = "";
+                var population = "";
+                var currency = "";
+                var languages = "";
+                var flag = "";
+                country = country.trim();
+
+                if(country == "India")
+                {
+                    var url = "https://restcountries.com/v3.1/name/" + "Bharat";
+                }
+                else
+                {
+                    var url = "https://restcountries.com/v3.1/name/" + country;
+                }
+                fetch(url)
+                    .then(reponse => {
+                        return reponse.json();
+                    })
+                    .then(ObjectData => {
+                        console.log(ObjectData);
+                        if(ObjectData.message == "Not Found")
+                        {           
+                            document.getElementById("image").src = "";
+                            document.getElementById("input").value = "";
+                            document.getElementById("country").innerHTML = "Country";
+                            document.getElementById("capital").innerHTML = "NA";
+                            document.getElementById("continent").innerHTML = "NA";
+                            document.getElementById("population").innerHTML = "NA";
+                            document.getElementById("currency").innerHTML = "NA";
+                            document.getElementById("languages").innerHTML = "NA";
+                            document.getElementById("image").src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/F1_chequered_flag.svg/330px-F1_chequered_flag.svg.png";
+                            alert("Entered Country is invalid.");
+                        }
+                        else
+                        {
+                            flag = ObjectData[0].flags["png"];
+                            capital = Object.values(ObjectData[0].capital).toString().split(",").join(", ");
+                            continent = Object.values(ObjectData[0].continents).toString().split(",").join(", ");
+                            population = ObjectData[0].population;
+
+                            curr_codes = Object.keys(ObjectData[0].currencies);
+                            for(var i = 0 ; i < curr_codes.length ; i = i + 1)
+                            {
+                                currency = currency + curr_codes[i] + ", ";
+                            }
+                            currency = currency.trim();
+                            if(currency.charAt(currency.length - 1) == ",")
+                                currency = currency.substring(0, currency.length - 1);
+
+                            languages = Object.values(ObjectData[0].languages).toString().split(",").join(", ");
+
+                            document.getElementById("image").src = flag;
+                            document.getElementById("country").innerHTML = country;
+                            document.getElementById("capital").innerHTML = capital;
+                            document.getElementById("continent").innerHTML = continent;
+                            document.getElementById("population").innerHTML = population;
+                            document.getElementById("currency").innerHTML = currency;
+                            document.getElementById("languages").innerHTML = languages;
+                        }
+                    })
+                    .catch(error => console.log("Error"));
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel = "preconnect" href = "https://fonts.googleapis.com">
+		<link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+		<link href = "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Poppins:wght@500&display=swap" rel = "stylesheet">
+
+        <title> Coin Flipper </title>
+
+        <style>
+            @font-face 
+            {
+                font-family : BlowBrush;
+                src : url(blowbrush.ttf);
+            }
+
+            *
+			{
+				margin : 0;
+				padding : 0;
+			}	
+				
+			body
+			{
+				font-family: 'Poppins', sans-serif;
+				background-color : #f0f2f5;
+			}
+			
+			nav
+			{
+				display : flex;
+				justify-content : space-around;
+				align-items : center;
+				height : 9.3708vh;
+				background-color : #90f545;
+				color : #045c5c;
+			}
+			
+			.leftheader
+			{
+				font-size : 3.2rem;
+                font-family : BlowBrush;
+			}
+			
+			ul
+			{
+				display : flex;
+				justify-content : center;
+				font-size : 1.1rem;
+			}
+			
+			ul li
+			{
+				list-style : none;
+				margin : 0 2.1484vw;
+			}
+			
+			a
+			{
+				text-decoration : none;
+				color : #045c5c;				
+			}
+
+            main
+            {
+                display : flex;
+                align-items : center;
+                justify-content: space-around;
+            }
+
+            .container
+            {
+                width : 32.552%;
+                height : 66.9344vh;
+                margin-top : 7.8313vh;
+                border-radius : 20px;
+                display : flex;
+                flex-direction : column;
+                align-items : center;
+                color : #045c5c;
+                background-color : white;
+            }
+
+            .heads-text
+            {
+                width : 80%;
+                height : 12.0482vh;
+                display : flex;
+                font-size : 2.5rem;
+                font-family : BlowBrush;
+            }
+
+            .htext
+            {
+                width: 85%;
+                height: 100%;
+                display : flex;
+                align-items : flex-end;
+                justify-content : flex-end;
+            }
+
+            .hstat
+            {
+                width: 15%;
+                height: 100%;
+                display : flex;
+                align-items : flex-end;
+                justify-content : flex-end;
+            }
+
+            .tails-text
+            {
+                width : 80%;
+                height : 6.6934vh;
+                display : flex;
+                font-size : 2.5rem;
+                font-family : BlowBrush;
+            }
+
+            .ttext
+            {
+                width: 85%;
+                height: 100%;
+                display : flex;
+                align-items : flex-start;
+                justify-content : flex-end;
+            }
+
+            .tstat
+            {
+                width: 15%;
+                height: 100%;
+                display : flex;
+                align-items : flex-start;
+                justify-content : flex-end;
+            }
+
+            .coin
+            {
+                width : 80%;
+                height : 36.1446vh;
+                display : flex;
+                flex-direction : column;
+            }
+
+            .image
+            {
+                width : 100%;
+                height : 29.4511vh;
+                display: flex;
+                justify-content : space-around;
+                align-items : center;
+                transform-style : preserve-3d;
+            }
+
+            #img
+            {
+                width : 50%;
+            }
+
+            @keyframes flip1
+            {
+                from
+                {
+                    transform : rotateY(0deg);
+                }
+                to 
+                {
+                    transform : rotateY(1800deg);
+                }
+            }
+
+            .text
+            {
+                width : 100%;
+                height : 6.6934vh;
+                font-family : BlowBrush;
+                font-size : 2.5rem;
+                display : flex;
+                align-items : flex-start;
+                justify-content : space-around;
+            }
+
+            .buttons
+            {
+                width : 80%;
+                height : 12.0482vh;
+                display : flex;
+                align-items : flex-start;
+                justify-content : space-evenly;
+                margin-top : 2.6774vh;
+            }
+
+            button
+            {
+                width : 30%;
+                height : 6.6934vh;
+                border-radius : 8px;
+                font-size : 1.8rem;
+                font-family : BlowBrush;
+                cursor : pointer;
+                background-color : transparent;
+                color : #045c5c;
+                border : 3.5px solid #90f545;
+            }
+
+            footer
+			{
+				background-color : #90f545;
+				height : 8.0321vh;
+				display : flex;
+				align-items : center;
+				margin-top : 7.8313vh;
+				color : #045c5c;
+                font-size : 1.1rem;
+			}
+			
+			footer div
+			{
+				margin-left : 82.6823vw;
+			}
+
+            @media only screen and (min-width: 320px)
+            {   
+                html
+                {
+                    font-size : 130%;
+                }
+
+                .leftheader
+                {
+                    font-size : 500%;
+                }
+
+                .rightheader
+                {
+                    display : none;
+                }
+
+                .container
+                {
+                    width : 85%;
+                }
+
+                .heads-text, .tails-text, .text
+                {
+                    font-size : 400%;
+                }
+
+                #img
+                {
+                    width : 90%;
+                }
+
+                #text
+                {
+                    font-size : 500%;
+                }
+
+                button
+                {
+                    width : 40%;
+                    height : 45%;
+                    font-size : 300%;
+                    border-radius : 25px;
+                    border : 8px solid #90f545;
+                }
+
+                footer
+                {
+                    justify-content : space-around;
+                }
+
+                footer div
+                {
+                    margin-left : 0px;
+                    font-size : 150%;
+                }
+            }
+
+            @media only screen and (min-width: 1000px)
+            {   
+                html
+                {
+                    font-size : 100%;
+                }
+
+                .leftheader
+			    {
+                    font-size : 3.2rem;
+                    font-family : BlowBrush;
+			    }
+
+                .rightheader
+                {
+                    display : block;
+                }
+
+                .container
+                {
+                    width : 32.552%;
+                }
+
+                .heads-text, .tails-text, .text
+                {
+                    font-size : 2.5rem;
+                }
+
+                #img
+                {
+                    width : 50%;
+                }
+
+                #text
+                {
+                    font-size : 2.5rem;
+                }
+
+                button
+                {
+                    width : 30%;
+                    height : 6.6934vh;
+                    font-size : 1.8rem;
+                    border-radius : 8px;
+                    border : 3.5px solid #90f545;
+                }
+
+                footer
+                {
+                    justify-content : flex-start;
+                }
+
+                footer div
+                {
+                    margin-left : 82.6823vw;
+                    font-size : 1.1rem;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+				<div class = "leftheader"> Coin Flipper </div>
+				
+				<div class = "rightheader"> 
+					<ul>
+						<li> <a href = "index.html"> Home </a> </li>
+						<li> <a href = "https://en.wikipedia.org/wiki/Coin_flipping" target = "_blank"> About </a> </li>
+						<li> <a href = "https://github.com/am2k2" target = "_blank"> Github </a> </li>
+						<li>  &#9993 apurbamondal2k2@gmail.com </li>						
+					</ul>
+				</div>
+			</nav>
+        </header>
+
+        <main>
+            <div class = "container">
+                <div class = "heads-text"> 
+                    <div class = "htext"> Heads: </div>
+
+                    <div class = "hstat" id = "h_cnt"> 0 </div>
+                </div>
+
+                <div class = "tails-text">
+                    <div class = "ttext"> Tails: </div>
+
+                    <div class = "tstat" id = "t_cnt"> 0 </div>
+                </div>
+
+                <div class = "coin">
+                    <div class = "image">
+                        <img src = "Heads_Tails.png" id = "img">
+                    </div>
+                    
+                    <div class = "text" id = "text"> Heads / Tails </div>
+                </div>
+
+                <div class = "buttons">
+                    <button onclick = "reset();"> Reset </button>
+
+                    <button onclick = "flip();"> Flip </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div>
+				&#169 AM's Portfolio 2023
+			</div>
+        </footer>
+
+        <script>
+            var outcome = 0;
+            var h_cnt = 0;
+            var t_cnt = 0;
+
+            function flip()
+            {
+                document.getElementById("img").src = "Heads_Tails.png";
+                document.getElementById("text").innerHTML = "";
+                document.getElementById("img").style.animation = "flip1 3s";
+
+                setTimeout(function(){
+                    document.getElementById("img").style.animation = "none";
+
+                    outcome = Math.floor(Math.random() * 2);
+                    if(outcome == 0)
+                    {
+                        h_cnt = h_cnt + 1;
+                        document.getElementById("img").src = "Heads.png";
+                        document.getElementById("h_cnt").innerHTML = h_cnt;
+                        document.getElementById("text").innerHTML = "Heads!";
+                    }   
+                    else if(outcome == 1)
+                    {
+                        t_cnt = t_cnt + 1;
+                        document.getElementById("img").src = "Tails.png";
+                        document.getElementById("t_cnt").innerHTML = t_cnt;
+                        document.getElementById("text").innerHTML = "Tails!";
+                    }
+                }, 2500);
+            }
+
+            function reset()
+            {
+                outcome = 0;
+                h_cnt = 0;
+                t_cnt = 0;
+
+                document.getElementById("img").src = "Heads_Tails.png";
+                document.getElementById("h_cnt").innerHTML = h_cnt;
+                document.getElementById("t_cnt").innerHTML = t_cnt;
+                document.getElementById("text").innerHTML = "Heads / Tails";
+            }
+        </script>
+    </body>
+</html>

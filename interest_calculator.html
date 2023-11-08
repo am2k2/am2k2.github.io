@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel = "preconnect" href = "https://fonts.googleapis.com">
+		<link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+		<link href = "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Poppins:wght@500&display=swap" rel = "stylesheet">
+
+        <title>
+            Interest Calculator
+        </title>
+
+        <style>
+            @font-face 
+            {
+                font-family : NeoEuler;
+                src : url(NeoEuler-VGO00.otf);
+            }
+            
+            *
+			{
+				margin : 0;
+				padding : 0;
+			}	
+				
+			body
+			{
+				font-family: 'Poppins', sans-serif;
+				background-color : #f0f2f5;
+			}
+			
+			nav
+			{
+				display : flex;
+				justify-content : space-around;
+				align-items : center;
+                height : 9.3708vh;
+				background-color : purple;
+				color : white;
+			}
+			
+			.leftheader
+			{
+				font-size : 2.4rem;
+                font-family : NeoEuler;
+			}
+			
+			ul
+			{
+				display : flex;
+				justify-content : center;
+				font-size : 1.1rem;
+			}
+			
+			ul li
+			{
+				list-style : none;
+				margin : 0 2.1484vw;
+			}
+			
+			a
+			{
+				text-decoration : none;
+				color : white;				
+			}
+
+            main
+            {
+                display : flex;
+                align-items : center;
+                justify-content : space-around;
+            }
+
+            .container
+            {
+                width : 52.1%;
+                height : 74.9665vh;
+                border-radius : 1.25rem;
+                margin-top : 3.8153vh;
+                display : flex;
+                flex-direction : column;
+                align-items : center;
+                background-color : white;
+            }
+
+            .interest_type-text
+            {
+                width : 70%;
+                height : 8.0321vh;
+                display : flex;
+                justify-content : space-between;
+                font-size : 1.15rem;
+            }
+
+            .left
+            {
+                width : 34.8214%;
+                height : 100%;
+                display : flex;
+                align-items : flex-end;
+            }
+
+            .right
+            {
+                width : 34.8214%;
+                height : 100%;
+                display : flex;
+                align-items : flex-end;
+            }
+
+            .interest_type
+            {
+                width : 70%;
+                height : 5.3548vh;
+                display : flex;
+                align-items : flex-end;
+                justify-content : space-between;
+            }
+
+            select
+            {
+                width : 35.714%;
+                height : 5.3548vh;
+                border-radius : 0.5rem;
+                border : none;
+                color : gray;
+                font-family : 'Poppins', sans-serif;
+                font-size : 0.95rem;
+                text-indent : 0.9375rem;
+                border : 0.09375rem solid purple;
+            }
+
+            .principal-text
+            {
+                width : 70%;
+                height : 6.6934vh;
+                display : flex;
+                align-items : flex-end;
+                font-size : 1.15rem;
+            }
+
+            .principal
+            {
+                width : 70%;
+                height : 5.3548vh;
+                display : flex;
+                justify-content : flex-start;
+                align-items : flex-end;
+            }
+
+            .rate-text
+            {
+                width : 70%;
+                height : 6.6934vh;
+                display : flex;
+                align-items : flex-end;
+                font-size : 1.15rem;
+            }
+
+            .rate
+            {
+                width : 70%;
+                height : 5.3548vh;
+                display : flex;
+                justify-content : space-between;
+                align-items : flex-end;
+            }
+
+            button
+            {
+                height : 100%;
+                width : 26.786%;
+                background-color : purple;
+                color : white;
+                border : none;
+                border-radius : 0.5rem;
+                font-size : 1.35rem;
+                cursor : pointer;
+                font-family : NeoEuler;
+            }
+
+            .time-text
+            {
+                width : 70%;
+                height : 6.6934vh;
+                display : flex;
+                align-items : flex-end;
+                font-size : 1.15rem;
+            }
+
+            .time
+            {
+                width : 70%;
+                height : 5.3548vh;
+                display : flex;
+                justify-content : flex-start;
+                align-items : flex-end;
+            }
+
+            input
+            {
+                width : 62.5%;
+                height : 5.3548vh;
+                border-radius : 0.5rem;
+                color : gray;
+                font-family : 'Poppins', sans-serif;
+                border : none;
+                text-indent : 0.9375rem;
+                font-size : 0.95rem;
+                border : 0.09375rem solid purple;
+            }
+
+            .principal-2
+            {
+                width : 70%;
+                height : 6.0241vh;
+                display : flex;
+                align-items : flex-end;
+                justify-content : flex-start;
+                font-size : 1.7rem;
+                margin-top : 1.5625rem;
+                color : gray;
+                font-family : NeoEuler;
+            }
+
+            .interest
+            {
+                width : 70%;
+                height : 6.0241vh;
+                display : flex;
+                align-items : flex-end;
+                justify-content : flex-start;
+                font-size : 1.7rem;
+                color : gray;
+                font-family : NeoEuler;
+            }
+
+            .final-amt
+            {
+                width : 70%;
+                height : 6.0241vh;
+                display : flex;
+                align-items : flex-end;
+                justify-content : flex-start;
+                font-size : 1.7rem;
+                color : gray;
+                font-family : NeoEuler;
+            }
+
+            #text
+            {
+                width : 55%;
+            }
+
+            footer
+			{
+				background-color : purple;
+				height : 8.0321vh;
+				display : flex;
+				align-items : center;
+				margin-top : 3.8153vh;
+				color : white;
+                font-size : 1.1rem;
+			}
+			
+			footer div
+			{
+				margin-left : 82.6823vw;
+			}
+
+            @media only screen and (min-width: 320px)
+            {
+                html
+                {
+                    font-size : 130%;
+                }
+
+                .leftheader
+                {
+                   font-size : 350%;
+                }
+
+                .rightheader
+                {
+                    display : none;
+                }
+
+                .container
+                {
+                    width : 85%;
+                }
+
+                .interest_type-text, .principal-text, .rate-text, .time-text
+                {
+                    font-size : 175%;
+                    width : 80%;
+                }
+
+                .interest_type, .principal, .rate, .time
+                {
+                    width : 80%;
+                }
+
+                .principal-2, .interest, .final-amt
+                {
+                    width : 80%;
+                }
+
+                .left
+                {
+                    width : 44%;
+                }
+
+                .right
+                {
+                    width : 44%;
+                }
+
+                input
+                {
+                    width : 66%;
+                    height : 95%;
+                    font-size : 155%;
+                }
+
+                select
+                {
+                    height : 95%;
+                    width : 45%;
+                    font-size : 155%;
+                    background-color : transparent;
+                }
+
+                .rate
+                {
+                    display : flex;
+                    align-items : center;
+                }
+
+                button
+                {
+                    width : 30%;
+                    height : 85%;
+                    font-size : 175%;
+                }
+
+                #text
+                {
+                    width : 60%;
+                    font-size : 140%;
+                }
+
+                #p-res, #i-res, #a-res
+                {
+                    font-size : 140%;
+                    overflow : auto;
+                }
+
+                footer
+                {
+                    justify-content : space-around;
+                }
+
+                footer div
+                {
+                    margin-left : 0px;
+                    font-size : 150%;
+                }
+            }
+
+            @media only screen and (min-width: 1000px)
+            {
+                html
+                {
+                    font-size : 100%;
+                }
+
+                .leftheader
+                {
+                    font-size : 2.4rem;
+                }
+
+                .rightheader
+                {
+                    display : block;
+                    font-size : 1.1rem;
+                }
+
+                .container
+                {
+                    width : 52.1%;
+                }
+
+                .interest_type-text
+                {
+                    font-size : 1.15rem;
+                }
+
+                .principal-text
+                {
+                    font-size : 1.15rem;
+                }
+
+                .rate-text
+                {
+                    font-size : 1.15rem;
+                }
+
+                .time-text
+                {
+                    font-size : 1.15rem;
+                }
+
+                .left
+                {
+                    width : 34.8214%;
+                }
+
+                .right
+                {
+                    width : 34.8214%;
+                }
+
+                input
+                {
+                    width : 62.5%;;
+                    height : 100%;
+                    font-size : 0.95rem;
+                }
+
+                select
+                {
+                    height : 100%;
+                    width : 35.714%;
+                    font-size : 0.95rem;
+                    background-color : transparent;
+                }
+
+                .rate
+                {
+                    display : flex;
+                    align-items : center;
+                }
+
+                button
+                {
+                    width : 26.786%;
+                    height : 100%;
+                    font-size : 1.35rem;
+                }
+
+                #text
+                {
+                    width : 55%;
+                    font-size : 1.7rem;
+                }
+
+                #p-res, #i-res, #a-res
+                {
+                    font-size : 1.7rem;
+                    overflow : auto;
+                }
+
+                footer
+                {
+                    justify-content : flex-start;
+                }
+
+                footer div
+                {
+                    margin-left : 82.6823vw;
+                    font-size : 1.1rem;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+				<div class = "leftheader"> Interest Calculator </div>
+				
+				<div class = "rightheader"> 
+					<ul>
+						<li> <a href = "index.html"> Home </a> </li>
+						<li> <a href = "https://www.investopedia.com/terms/i/interest.asp" target = "_blank"> About </a> </li>
+						<li> <a href = "https://github.com/am2k2" target = "_blank"> Github </a> </li>
+						<li>  &#9993 apurbamondal2k2@gmail.com </li>						
+					</ul>
+				</div>
+			</nav>
+        </header>
+
+        <main>
+            <div class = "container">
+                <div class = "interest_type-text">
+                    <div class = "left"> Interest Type </div>
+                    <div class = "right" id = "rt" style = "visibility : hidden;"> Frequency </div>
+                </div>
+
+                <div class = "interest_type">
+                    <select class = "s_c" id = "int_type" onchange = "hide();"> 
+                        <option value = "S"> Simple </option>
+                        <option value = "C"> Compound </option>
+                    </select>
+
+                    <select class = "freq" id = "freq" style = "visibility : hidden;"> 
+                        <option value = "1"> Yearly </option>
+                        <option value = "2"> Half-yearly </option>
+                        <option value = "4"> Quaterly </option>
+                        <option value = "12"> Monthly </option>
+                        <option value = "52"> Weekly </option>
+                        <option value = "365"> Daily </option>
+                    </select>
+                </div>
+
+                <div class = "principal-text">
+                    Principal Amount (in &#8377;)
+                </div>
+
+                <div class = "principal"> 
+                    <input type = "number" placeholder = "Enter the Principal Amt." id = "p">
+                </div>
+
+                <div class = "rate-text">
+                    Interest Rate (in % p.a)
+                </div>
+
+                <div class = "rate"> 
+                    <input type = "number" placeholder = "Enter the Interest Rate" id = "r">
+
+                    <button onclick = "calculate();"> Compute </button>
+                </div>
+
+                <div class = "time-text">
+                    Time Period (in Years)
+                </div>
+
+                <div class = "time"> 
+                    <input type = "number" placeholder = "Enter the Time Period" id = "t">
+                </div>
+
+                <div class = "principal-2">
+                    <p id = "text"> Principal Amt. </p>
+                    <p id = "p-res"> NA </p>
+                </div>
+
+                <div class = "interest">
+                    <p id = "text"> Total Interest </p>
+                    <p id = "i-res"> NA </p>
+                </div>
+
+                <div class = "final-amt">
+                    <p id = "text"> Total Amt. </p>
+                    <p id = "a-res"> NA </p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div>
+				&#169 AM's Portfolio 2023
+			</div>
+        </footer>
+
+        <script>
+            function hide()
+            {
+                var int_type = document.getElementById("int_type").value;
+                
+                if(int_type == "C")
+                {
+                    document.getElementById("rt").style.visibility = "visible";
+                    document.getElementById("freq").style.visibility = "visible";
+                }
+                else
+                {
+                    document.getElementById("rt").style.visibility = "hidden";
+                    document.getElementById("freq").style.visibility = "hidden";
+                }
+            }
+            
+            function calculate()
+            {
+                var int_type = document.getElementById("int_type").value;
+
+                var principal = parseFloat(document.getElementById("p").value);
+                var rate = parseFloat(document.getElementById("r").value);
+                var time = parseFloat(document.getElementById("t").value);
+                var freq = parseInt(document.getElementById("freq").value);
+                var interest = 0;
+                var amt = 0;
+
+                if(Number.isNaN(principal) == true || Number.isNaN(rate) == true || Number.isNaN(time) == true)
+                {
+                    alert("Principal Amount or Rate of Interest or Time Period cannot be left blank.");
+                    return;
+                }
+                else if(principal < 0 || rate < 0 || time < 0)
+                {
+                    alert("Principal Amount or Rate of Interest or Time Period cannot be negative.");
+                    return;
+                }
+
+                principal = Math.round(principal * 100) / 100;
+                rate = Math.round(rate * 100) / 100;
+                time = Math.round(time * 100) / 100;
+                if(int_type == "S")
+                {
+                    interest = (rate / 100) * principal * time;
+                    interest = Math.round(interest * 100) / 100;
+                    amt = principal + interest;
+                    amt = Math.round(amt * 100) / 100;
+                }
+                else
+                {
+                    amt = principal * Math.pow((1 + (rate / 100) / freq), freq * time);
+                    amt = Math.round(amt * 100) / 100;
+                    interest = amt - principal;
+                    interest = Math.round(interest * 100) / 100;
+                }
+
+                document.getElementById("p-res").innerHTML = "&#8377;" + principal;
+                document.getElementById("i-res").innerHTML = "&#8377;" + interest;
+                document.getElementById("a-res").innerHTML = "&#8377;" + amt;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AM's Portfolio </title>
+		
+		<link rel = "preconnect" href = "https://fonts.googleapis.com">
+		<link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+		<link href = "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Poppins:wght@500&display=swap" rel = "stylesheet">
+		
+		<style>
+			*
+			{
+				margin : 0;
+				padding : 0;
+			}
+			
+			body
+			{
+				background-color : rgb(0, 160, 160);
+				color : white;
+				font-family: 'Poppins', sans-serif;
+			}
+			
+			nav
+			{
+				display : flex;
+				justify-content : space-around;
+				align-items : center;
+				height : 9.3708vh;
+				background-color : rgb(0, 140, 140);
+			}
+			
+			nav ul
+			{
+				display : flex;
+				justify-content : center;
+				font-size : 1.1rem;				
+			}
+			
+			nav ul li
+			{
+				list-style : none;
+			}
+			
+			nav ul li a
+			{
+				text-decoration : none;
+				color : white;
+			}
+			
+			.leftheader
+			{
+				font-size : 2.2rem;
+				color : whitesmoke;
+			}
+
+			#dv
+			{
+				width : 13.021vw; 
+				height : 4vh; 
+				display : flex; 
+				justify-content : center; 
+				align-items : center;
+			}
+
+			#i1, #i2
+			{
+				display : none;
+			}
+		
+			#projects, #contact, #socials
+			{
+				height : 4vh;
+				width : 13.021vw;
+				border : none;
+				text-align : center;
+				font-size : 1.1rem;
+				font-family : 'Poppins', sans-serif;
+				color : white;
+				background-color : transparent;
+				cursor : pointer;
+				-webkit-appearance : none;
+  				-moz-appearance : none;
+			}
+
+			#projects:focus, #contact:focus, #socials:focus
+			{
+				outline : none !important;
+			}
+			
+			.firstsection
+			{
+				display : flex;
+				justify-content : space-evenly;
+				align-items : center;
+				margin : 8.7015vh 0;
+			}
+			
+			.firstsection div
+			{
+				width : 30%;
+			}
+			
+			.leftsection
+			{
+				font-size : 2.5rem;
+				margin-left : 5vw;
+				height : 40.2560vh;
+				width : 30.755%;
+			}
+			
+			.rightsection img
+			{
+				width : 80%;
+				border-radius : 30px;
+			}
+			
+			.firstsection span
+			{
+				color : khaki;
+			}
+			
+			.firstsection button
+			{
+				background-color : rgb(0, 160, 160);
+				border : 3px solid khaki;
+				border-radius : 12px;
+				color : white;
+				font-size : 20px;
+				padding : 12px;
+				margin-top : 3.3467vh;
+				cursor : pointer;
+				font-family : 'Poppins', sans-serif;
+			}
+			
+			.secondsection
+			{
+				max-width : 80vw;
+				margin : auto;
+				height : 82.8vh;
+			}
+			
+			.secondsection hr
+			{
+				background-color : white;
+				border : none;
+				height : 0.4vh;
+			}
+
+			.cont
+			{
+				height : 60.2410vh;
+				width : 65.10%;
+				display : flex;
+				margin-top : 1vh;
+			}
+
+			.c1
+			{
+				width : 0.6%;
+				height : 100%;
+				background-color : white;
+			}
+
+			.c2
+			{
+				width : 99.4%;
+				height : 100%;
+			}
+
+			.top, .middle, .bottom
+			{
+				width : 100%;
+				height : 20.0803vh;
+				display : flex;
+				align-items : center;
+				gap : 20px;
+				font-size : 1.3rem;
+			}
+
+			.hr
+			{
+				background-color : white;
+				width : 10%;
+				height : 3%;
+			}
+
+			.secondsection span
+			{
+				color : rgb(130, 260, 220);
+				font-size : 2rem; 
+				font-family : 'Poppins', sans-serif;
+			}
+
+			.secondsection h1
+			{
+				font-size : 1.5rem; 
+				font-family : 'Poppins', sans-serif;
+			}
+			
+			footer
+			{
+				margin-top : 9.3708vh;
+				background-color : rgb(0, 140, 140);
+				height : 8.0321vh;
+				font-size : 1.1rem;
+				display : flex;
+				align-items : center;
+			}
+			
+			.copyright
+			{
+				margin-left : 82.6823vw;
+			}
+
+			@media only screen and (min-width: 320px)
+            {   
+                html
+                {
+                    font-size : 130%;
+                }
+
+                .leftheader
+                {
+                    font-size : 400%;
+                }
+
+				#i1, #i2
+				{
+					display : flex;
+					font-size : 400%;
+					font-family : 'Poppins', sans-serif;
+				}
+
+				#i1
+				{
+					margin-left : 100px;
+					margin-top : 5vh;
+					font-size : 4.5rem;
+					font-family : 'Poppins', sans-serif;
+				}
+
+				nav ul
+				{
+					background-color : orangered;
+					position : fixed;
+					top : 0;
+					right : -60%;
+					width : 60%;
+					height : 100%;
+					flex-direction : column;
+					justify-content : flex-start;
+					color : white;
+					transition: right 2s;
+				}
+
+				#dv, #projects, #socials, #contact
+				{
+					font-size : 2.5rem;
+					margin-top : 3vh;
+					width : 100%;
+					color : white;
+					font-family : 'Poppins', sans-serif;
+					text-align : start;
+					margin-left : 100px;;
+				}
+
+				#dv
+				{
+					justify-content : flex-start;
+				}
+
+				main
+				{
+					display : flex;
+					flex-direction : column;
+					align-items : center;
+				}
+
+				.firstsection
+				{
+					flex-direction : column;
+					align-items : flex-start;
+					justify-content : space-evenly;
+					width : 90%;
+					height : 100vh;
+					margin-top : 0vh;
+				}
+
+				#leftsection
+				{
+					width : 90%;
+					height : 30%;
+					font-size : 360%;
+				}
+
+				#btn
+				{
+					width : 40%;
+					height : 22%;
+					font-size : 55%;
+					border : 7px solid khaki;
+					border-radius : 30px;
+				}
+
+				#rightsection
+				{
+					width : 100%;
+					height : 55%;
+					display : flex;
+					justify-content :center;
+				}
+
+				#img
+				{
+					height : 100%;
+					width : 100%;
+					margin-top : -5vh;
+				}
+
+				.secondsection
+				{
+					margin-top : -15vh;
+				}
+
+				.secondsection span
+				{
+					font-size : 280%;
+				} 
+
+				.secondsection h1
+				{
+					font-size : 230%;
+				} 
+
+				.cont
+				{
+					width : 100%;
+				}
+
+				.c1
+				{
+					width : 1.5%;
+				}
+
+				.c2
+				{
+					width : 98.5%;
+				}
+
+				.top, .middle, .bottom
+				{
+					font-size : 195%;
+					gap : 35px;
+				}
+
+				.hr
+				{
+					height : 2.3%;
+					width : 20%;
+				}
+				
+				p
+				{
+					width : 75%;
+				}
+
+				footer
+                {
+					margin-top : -3vh;
+                    justify-content : space-around;
+                }
+
+                .copyright
+                {
+                    margin-left : 0px;
+                    font-size : 150%;
+                }
+			}
+
+			@media only screen and (min-width: 1000px)
+            {   
+                html
+                {
+                    font-size : 100%;
+                }
+
+                .leftheader
+                {
+                    font-size : 2.2rem;
+					color : whitesmoke;
+                }
+
+				#i1, #i2
+				{
+					display : none;
+				}
+
+				nav ul
+				{
+					background-color : transparent;
+					position : relative;
+					top : 0vh;
+					right : 0%;
+					width : 52.084vw;
+					height : 10vh;
+					flex-direction : row;
+					font-size : 1.1rem;
+					align-items : flex-start; 
+				}
+
+				#dv, #projects, #socials, #contact
+				{
+					font-size : 1.1rem;
+					color : white;		
+					text-align : center;				
+					margin-left : 0vh;
+					width : 13.021vw; 
+					height : 4vh; 
+					display : flex; 
+					justify-content : center; 
+					align-items : center;
+				}
+
+				.firstsection
+				{		
+					width : 98.906vw;
+					height : 67.3644vh;
+					display : flex;
+					flex-direction : row;
+					justify-content : space-evenly;
+					align-items : center;
+					margin : 8.7015vh 0;
+				}
+
+				#leftsection
+				{
+					font-size : 2.5rem;
+					margin-left : 4.5vw;
+					height : 40.2560vh;
+					width : 30.755%;
+				}
+
+				#btn
+				{
+					border : 3px solid khaki;
+					border-radius : 12px;
+					color : white;
+					font-size : 20px;
+					padding : 0px;
+					width : 32%;
+					margin-top : 3.3467vh;
+					height : 8vh;
+				}
+
+				#rightsection
+				{
+					width : 29.671vw;
+					height : 67.3644vh;
+					display : flex;
+					align-items : flex-start;
+					justify-content : flex-start;
+					margin-right : 1vh;
+					margin-top : 0vh;
+				}
+
+				#img
+				{
+					height : 99%;
+					width : 80%;
+					margin-top : 0vh;
+				}
+
+				.secondsection
+				{
+					margin-top : 0vh;
+					width : 80vw;
+					margin : auto;
+					height : 82.8vh;
+				}
+
+				.secondsection span
+				{
+					font-size : 2rem;
+				} 
+
+				.secondsection h1
+				{
+					font-size : 1.5rem;
+				} 
+
+				.cont
+				{
+					height : 60.2410vh;
+					width : 75%;
+					display : flex;
+					margin-top : 0vh;
+				}
+
+				.c1
+				{
+					width : 0.6%;
+				}
+
+				.c2
+				{
+					width : 99.4%;
+				}
+
+				.top, .middle, .bottom
+				{
+					width : 100%;
+					height : 20.0803vh;
+					display : flex;
+					align-items : center;
+					gap : 15px;
+					font-size : 1.3rem;
+				}
+
+				.hr
+				{
+					width : 10%;
+					height : 2.6%;
+				}
+
+				p
+				{
+					width : 85%;
+				}
+
+				footer
+                {
+					margin-top : 9.3708vh;
+                    justify-content : flex-start;
+                }
+
+                .copyright
+                {
+                    margin-left : 82.6823vw;
+                    font-size : 1.1rem;
+                }
+			}
+		</style>
+	</head>
+	
+	<body>
+		<header>
+			<nav>
+				<div class = "leftheader"> AM's Portfolio </div>
+				
+				<div class = "rightheader" style = "margin-left : 0px;">
+					<ul id = "menu">
+						<p id = "i1" onclick = "closemenu();"> &#9747; </p>
+
+						<div id = "dv"> <li style = "cursor : pointer;" onclick = "about();"> About Me </li> </div>
+
+						<li> 
+							<select id = "projects" onChange = "window.location.href = this.value; this.value = 'My Projects'">
+								<option disabled selected> My Projects </option>
+								<option style = "color : black; font-size : 1rem; text-align : start;" value = "index.html"> Portfolio </option>
+								<option style = "color : black; font-size : 1rem; text-align : start;" value = "country_guide.html"> Country Guide </option>
+								<option style = "color : black; font-size : 1rem; text-align : start;" value = "weather_app.html"> Weather App </option>
+								<option style = "color : black; font-size : 1rem; text-align : start;" value = "dictionary.html"> Dictionary </option>
+								<option style = "color : black; font-size : 1rem; text-align : start;" value = "shift_cipher.html"> Shift Cipher </option>
+								<option style = "color : black; font-size : 1rem; text-align : start;" value = "interest_calculator.html"> Interest Calculator </option>
+								<option style = "color : black; font-size : 1rem; text-align : start;" value = "calculator.html"> Calculator </option>
+								<option style = "color : black; font-size : 1rem; text-align : start;" value = "currency_converter.html"> Currency Converter </option>
+								<option style = "color : black; font-size : 1rem; text-align : start;" value = "tic_tac_toe.html"> Tic Tac Toe </option>
+								<option style = "color : black; font-size : 1rem; text-align : start;" value = "coin_flipper.html"> Coin Flipper </option>
+							</select> 
+						</li>
+
+						<li> 
+							<select id = "socials" onChange = "window.location.href = this.value; this.value = 'Socials'">
+								<option disabled selected> Socials </option>
+								<option style = "color : black; font-size : 1rem; text-align : start;" value = "https://telegram.me/Ellipse009"> Telegram </option>
+								<option style = "color : black; font-size : 1rem; text-align : start;" value = "https://wa.me/9476383010"> WhatsApp </option>
+							</select>
+						</li>
+						
+						<li> 
+							<select id = "contact">
+								<option disabled selected> Contact Me </option>
+								<option style = "color : black; font-size : 1rem; text-align : start;" disabled> &#9743 +91 7797625788 </option>
+								<option style = "color : black; font-size : 1rem; text-align : start;" disabled> &#9993 apurbamondal2k2@gmail.com </option>
+							</select>
+						</li>
+					</ul>
+
+					<p id = "i2" onclick = "openmenu();"> &#9776; </p>
+				</div>
+			</nav>
+		</header>
+		
+		<main>
+			<section class = "firstsection">
+				<div class = "leftsection" id = "leftsection"> 
+					Hola, I'm <span> AM </span> <br>
+					and I'm a passionate <br>
+					<span id="element"> </span> <br>
+					
+					<button id = "btn" onclick = "resume()"> Get Resume </button>
+					<button id = "btn"> <a style = "color : white; text-decoration : none;" target = "_blank" href = "https://github.com/am2k2"> Visit Github </a> </button>			
+				</div>
+				
+				<div class = "rightsection" id = "rightsection">
+					<img src = "Me.jpeg" id = "img">
+				</div>
+			</section>
+			
+			<section class = "secondsection">
+				<hr> <br> <br>
+				
+				<span> What I have learnt so far </span>
+				
+				<h1> Academic Experience </h1> <br>
+
+				<div class = "cont">
+					<div class = "c1"> </div>
+
+					<div class = "c2">
+						<div class = "top">
+							<div class = "hr"> </div>
+
+							<p> Learnt Java in High School &#x1F3EB </p>
+						</div>
+
+						<div class = "middle">
+							<div class = "hr"> </div>
+
+							<p> Learnt C, Java, Python, DSA, SQL & Web Development in University &#x1F393 </p>
+						</div>
+
+						<div class = "bottom">
+							<div class = "hr"> </div>
+
+							<p> Plz hire me as a Fresher so that I can gain some experience &#x1F629 </p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		
+		<footer>
+			<div class = "copyright"> &#169 AM's Portfolio 2023 </div>
+		</footer>
+		
+		<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"> </script>
+		
+		<script>
+				var menu = document.getElementById("menu");
+				
+				function openmenu()
+				{
+					menu.style.right = "0%";
+				}
+
+				function closemenu()
+				{
+					menu.style.right = "-60%";
+				}
+
+    			var typed = new Typed('#element', {
+      			strings: ['web developer \u{1F4BB}', 'procrastinator \u{23F0}', 'sleepaholic \u{1F634}'],
+      			typeSpeed: 50,
+    			});
+    			
+    			function resume()
+    			{
+    				alert("Preparation of my resume is currently in-progress \u{1F62C}");
+    			}
+
+				function about()
+				{
+					alert("> Age : 21 yrs.\n> From : West Bengal, India \n> Pursuing B.Sc. Computer Science(H) at Visva Bharati University (2021 - 2024) \n> Hobbies : Reading Books (Favourite - The Alchemist), Playing Video Games (Favourite - Valorant), Watching Cricket \n> Favourite Food : Paneer Butter Masala with Puris \n> Favourite Destination to which I have been so far : Ross Island");
+				}
+  		</script>
+	</body>
+</html>

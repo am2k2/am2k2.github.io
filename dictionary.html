@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel = "preconnect" href = "https://fonts.googleapis.com">
+		<link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+		<link href = "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Poppins:wght@500&display=swap" rel = "stylesheet">
+
+        <title> Dictionary </title>
+
+        <style>
+            *
+			{
+				margin : 0;
+				padding : 0;
+			}	
+				
+			body
+			{
+				font-family: 'Poppins', sans-serif;
+                background-color : #f0f2f5;
+			}
+			
+			nav
+			{
+				display : flex;
+				justify-content : space-around;
+				align-items : center;
+				height : 9.3708vh;
+				background-color : black;
+				color : white;
+			}
+			
+			.leftheader
+			{
+				font-size : 2.4rem;
+			}
+			
+			ul
+			{
+				display : flex;
+				justify-content : center;
+				font-size : 1rem;
+			}
+			
+			ul li
+			{
+				list-style : none;
+				margin : 0 2.15vw;
+			}
+			
+			a
+			{
+				text-decoration : none;
+				color : white;				
+			}
+
+            main
+            {
+                display : flex;
+                justify-content : space-around;
+            }
+
+            .container
+            {
+                width : 52.08%;
+                height : 64.2570vh;
+                margin-top : 9.1700vh;
+                border-radius : 20px;
+                background-color : white;
+                display : flex;
+                flex-direction : column;
+                align-items : center;
+            }
+
+            .search
+            {
+                width : 68.8%;
+                height : 12.7175vh;
+                display : flex;
+                justify-content : space-between;
+                align-items : flex-end;
+            }
+
+            input
+            {
+                width : 74.50%;
+                height : 6.0241vh;
+                border-radius : 8px;
+                color : gray;
+                background-color : whitesmoke;
+                font-family : 'Poppins', sans-serif;
+                font-size : 0.9rem;
+                border : 0.5px solid gray;
+                text-indent : 15px;
+            }
+
+            button
+            {
+                width : 23.62%;
+                height : 6.0241vh;
+                border-radius : 8px;
+                font-family : 'Poppins', sans-serif;
+                font-size : 1rem;
+                color : white;
+                background-color : black;
+                border : none;
+                cursor: pointer;
+            }
+
+            .result
+            {
+                width : 80%;
+                height : 48.1928vh;
+                display : flex;
+                flex-direction : column;
+                align-items : center;
+            }
+
+            .word
+            {
+                width : 86%;
+                height : 16.0643vh;
+                display : flex;
+                align-items : flex-end;
+                justify-content : flex-start;
+                font-size : 2rem;
+            }
+
+            .word-new
+            {
+                width : 86%;
+                height : 16.0643vh;
+                display : flex;
+                align-items : flex-end;
+                justify-content : flex-start;
+                font-size : 2rem;
+            }
+
+            .details
+            {
+                width : 86%;
+                height : 6.6934vh;
+                display : flex;
+                align-items : flex-start;
+                justify-content : flex-start;
+                gap : 10px; 
+                font-size : 1.2rem;
+                color : gray;
+            }
+
+            .details-new
+            {
+                width : 86%;
+                height : 6.6934vh;
+                display : flex;
+                align-items : flex-start;
+                justify-content : flex-start;
+                gap : 10px; 
+                font-size : 1.2rem;
+                color : gray;
+            }
+
+            .meaning 
+            {
+                width : 86%;
+                height : 18.7416vh;
+                font-size : 1.2rem;
+                display : flex;
+                align-items : center;
+                color : gray;
+                justify-content : flex-start;
+            }
+
+            .meaning-new
+            {
+                width : 86%;
+                height : 18.7416vh;
+                font-size : 1.2rem;
+                display : flex;
+                align-items : center;
+                color : gray;
+                justify-content : flex-start;
+            }
+
+            .example
+            {
+                width : 86%;
+                height : 18.7416vh;
+                font-size : 1rem;
+                display : flex;
+                justify-content : space-between;
+                align-items : center;
+                background-color : whitesmoke;
+                color : gray;
+            }
+
+            .example-new
+            {
+                width : 86%;
+                height : 18.7416vh;
+                font-size : 1rem;
+                display : flex;
+                justify-content : space-between;
+                align-items : center;
+                background-color : whitesmoke;
+                color : gray;
+            }
+
+            .emp1
+            {
+                width : 3%;
+                height : 100%;
+                background-color : gray;
+            }
+
+            .emp1-new
+            {
+                width : 3%;
+                height : 100%;
+                background-color : gray;
+            }
+
+            .emp2
+            {
+                width : 95%;
+                height : 100%;
+                display : flex;
+                justify-content : flex-start;
+                align-items : center;
+            }
+
+            .emp2-new
+            {
+                width : 95%;
+                height : 100%;
+                display : flex;
+                justify-content : flex-start;
+                align-items : center;
+            }
+
+            footer
+			{
+				background-color : black;
+				height : 8.0321vh;
+				display : flex;
+				align-items : center;
+				margin-top : 9.1700vh;
+				color : white;
+			}
+			
+			footer div
+			{
+				margin-left : 82.682vw;
+			}
+
+            @media only screen and (min-width: 320px)
+            {   
+                html
+                {
+                    font-size : 130%;
+                }
+
+                .leftheader
+                {
+                    font-size : 500%;
+                }
+
+                .rightheader
+                {
+                    display : none;
+                }
+
+                .container
+                {
+                    width : 90%;
+                    height : 75vh;
+                    margin-top : 3.8vh;
+                }
+
+                .search
+                {
+                    width : 85%;
+                }
+
+                input
+                {
+                    width : 65%;
+                    font-size : 180%;
+                    height : 40%;
+                    border : 4px solid gray;
+                    border-radius : 15px;
+                }
+
+                button
+                {   
+                    width : 30%;
+                    height : 42%;
+                    font-size : 160%;
+                    border-radius : 15px;
+                }
+
+                .result
+                {
+                    width : 95%;
+                    height : 75%;
+                }
+
+                .word, .word-new
+                {
+                    font-size : 500%;
+                }
+
+                .details, .details-new
+                {
+                    font-size : 200%;
+                }
+
+                .meaning, .meaning-new, .example, .example-new
+                {
+                    font-size : 200%;
+                }
+
+                .meaning, .meaning-new
+                {
+                    height : 39%;
+                }
+
+                .example, .example-new
+                {
+                    height : 19%;
+                    font-size : 200%;
+                }
+
+                .emp1, .emp1-new
+                {
+                    width : 4%;
+                }
+
+                .emp2, .emp2-new
+                {
+                    width : 94%;
+                }
+
+                footer
+                {
+                    justify-content : space-around;
+                    margin-top : 3.8vh;
+                }
+
+                footer div
+                {
+                    margin-left : 0px;
+                    font-size : 150%;
+                }
+            }
+
+            @media only screen and (min-width: 1000px)
+            {   
+                html
+                {
+                    font-size : 100%;
+                }
+
+                .leftheader
+                {
+                    font-size : 2.4rem;
+                }
+
+                .rightheader
+                {
+                    display : block;
+                    font-size : 1.1rem;
+                }
+
+                .container
+                {
+                    width : 52.08%;
+                    height : 64.2570vh;
+                    margin-top : 9.1700vh;
+                }
+
+                .search
+                {
+                    width : 68.8%;
+                }
+
+                input
+                {
+                    width : 74.50%;
+                    height : 6.0241vh;
+                    border-radius : 8px;
+                    color : gray;
+                    background-color : whitesmoke;
+                    font-family : 'Poppins', sans-serif;
+                    font-size : 0.9rem;
+                    border : 0.5px solid gray;
+                    text-indent : 15px;
+                }
+
+                button
+                {   
+                    width : 23.62%;
+                    height : 6.0241vh;
+                    border-radius : 8px;
+                    font-family : 'Poppins', sans-serif;
+                    font-size : 1rem;
+                    color : white;
+                    background-color : black;
+                    border : none;
+                    cursor: pointer;
+                }
+
+                .result
+                {
+                    width : 80%;
+                    height : 48.1928vh;
+                }
+
+                .word, .word-new
+                {
+                    font-size : 2rem;
+                }
+
+                .details, .details-new
+                {
+                    font-size : 1.2rem;
+                }
+
+                .meaning, .meaning-new, .example, .example-new
+                {
+                    font-size : 1.2rem;
+                }
+
+                .meaning, .meaning-new
+                {
+                    width : 86%;
+                    height : 18.7416vh;
+                }
+
+                .example, .example-new
+                {
+                    width : 86%;
+                    height : 18.7416vh;
+                    font-size : 1.2rem;
+                }
+
+                .emp1, .emp1-new
+                {
+                    width : 3%;
+                }
+
+                .emp2, .emp2-new
+                {
+                    width : 95%;
+                }
+
+                footer
+                {
+                    justify-content : flex-start;
+                    margin-top : 9.1700vh;
+                }
+
+                footer div
+                {
+                    margin-left : 82.682vw;
+                    font-size : 1.1rem;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+				<div class = "leftheader"> Dictionary </div>
+				
+				<div class = "rightheader"> 
+					<ul>
+						<li> <a href = "index.html"> Home </a> </li>
+						<li> <a href = "https://en.wikipedia.org/wiki/Dictionary" target = "_blank"> About </a> </li>
+						<li> <a href = "https://github.com/am2k2" target = "_blank"> Github </a> </li>
+						<li>  &#9993 apurbamondal2k2@gmail.com </li>						
+					</ul>
+				</div>
+			</nav>
+        </header>
+
+        <main>
+            <div class = "container" id = "container">
+                <div class = "search">
+                    <input id = "input" type = "text" placeholder = "Enter a Word">
+
+                    <button onclick = "search()"> Look Up </button>
+                </div>
+
+                <div class = "result" id = "result">
+                    <div class = "word" id = "word"> Word </div>
+
+                    <div class = "details">
+                        <p id = "pos"> pos </p>
+
+                        <p id = "phonetic"> /phonetic/ </p>
+                    </div>
+
+                    <div class = "meaning" id = "meaning">
+                        Meaning
+                    </div>
+
+                    <div class = "example">
+                        <div class = "emp1"> </div>
+                        <div class = "emp2" id = "example"> Example </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer id = "footer">
+            <div>
+				&#169 AM's Portfolio 2023
+			</div>
+        </footer>
+
+        <script>
+            function search()
+            {
+                var word = document.getElementById("input").value;
+                var meaning = "";
+                var example = "";
+                var pos = "";
+                var phonetic = "";
+                let count = 0;
+                var height1 = 0;
+                var height2 = 0;
+                word = word.trim();
+
+                var url = 'https://api.dictionaryapi.dev/api/v2/entries/en/' + word;
+
+                fetch(url)
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(ObjectData => {
+                        if( ObjectData.title == "No Definitions Found")
+                        {
+                            word = "Word";
+                            meaning = "Meaning";
+                            pos = "pos";
+                            phonetic = "/phonetic/";
+                            example = "Example";
+
+                            document.getElementById("input").value = "";
+                            document.getElementById("word").innerHTML = word;
+                            document.getElementById("meaning").innerHTML = meaning;
+                            document.getElementById("pos").innerHTML = pos;
+                            document.getElementById("phonetic").innerHTML = phonetic;
+                            document.getElementById("example").innerHTML = example;
+                            alert("Entered word is invalid.");
+                        }
+                        else
+                        {
+                            console.log(ObjectData);
+                            for(k = 1 ; k < 1000 ; k = k + 1)
+                            {
+                                var Div1 = document.getElementById("word-new" + k);
+                                var Div2 = document.getElementById("details-new" + k);
+                                var Div3 = document.getElementById("meaning-new" + k);
+                                var Div4 = document.getElementById("example-new" + k);
+
+                                if(Div1 == null)
+                                    break;
+
+                                document.getElementById("result").removeChild(Div1);
+                                document.getElementById("result").removeChild(Div2);
+                                document.getElementById("result").removeChild(Div3);
+                                document.getElementById("result").removeChild(Div4);
+                            }
+                            
+                            count = Object.keys(ObjectData).length;
+
+                            meaning = ObjectData[0].meanings[0].definitions[0].definition;
+                            example = ObjectData[0].meanings[0].definitions[0].example;
+                            pos = ObjectData[0].meanings[0].partOfSpeech;
+                            phonetic = ObjectData[0].phonetics[0].text;
+
+                            document.getElementById("word").innerHTML = word;
+                            document.getElementById("meaning").innerHTML = meaning;
+                            document.getElementById("pos").innerHTML = pos;
+                            document.getElementById("phonetic").innerHTML = phonetic;
+                            document.getElementById("example").innerHTML = example;
+
+                            if(screen.width >= 1000)
+                            {
+                                height1 = 48.1928 * count;
+                                height2 = 16.0643 + height1;
+                            }
+                            else
+                            {
+                                height1 =  56.25 * count;
+                                height2 = 18.75 + height1;
+                                document.getElementById("container").style.marginTop = "3.8vh";
+                                document.getElementById("footer").style.marginTop = "3.8vh";
+                            }               
+                            height1 = height1.toString() + "vh";
+                            height2 = height2.toString() + "vh";
+                            document.getElementById("container").style.height = height2;
+                            document.getElementById("result").style.height = height1;                           
+                            for(var i = 1; i < count ; i++)
+                            {
+                                var newDiv1 = document.createElement("div");
+                                var newDiv2 = document.createElement("div");
+                                var newP1 = document.createElement("p");
+                                var newP2 = document.createElement("p");
+                                var newDiv3 = document.createElement("div");
+                                var newDiv4 = document.createElement("div");
+                                var newDiv5 = document.createElement("div");
+                                var newDiv6 = document.createElement("div");
+
+                                newDiv1.classList.add("word-new");
+                                newDiv2.classList.add("details-new");
+                                newDiv3.classList.add("meaning-new");
+                                newDiv4.classList.add("example-new");
+                                newDiv5.classList.add("emp1-new");
+                                newDiv6.classList.add("emp2-new");
+
+                                document.getElementById("result").appendChild(newDiv1);
+                                document.getElementById("result").appendChild(newDiv2);
+                                document.getElementById("result").appendChild(newDiv3);
+                                document.getElementById("result").appendChild(newDiv4);
+                                newDiv4.appendChild(newDiv5);
+                                newDiv4.appendChild(newDiv6);
+                                newDiv2.appendChild(newP1);
+                                newDiv2.appendChild(newP2);
+
+                                newDiv1.id = "word-new" + i;
+                                newDiv2.id = "details-new" + i;
+                                newDiv3.id = "meaning-new" + i;
+                                newDiv4.id = "example-new" + i;
+                                newDiv5.id = "emp1-new" + i;
+                                newDiv6.id = "emp2-new" + i;
+                                newP1.id = "pos-new" + i;
+                                newP2.id = "phonetic-new" + i;
+
+                                meaning = ObjectData[i].meanings[0].definitions[0].definition;
+                                example = ObjectData[i].meanings[0].definitions[0].example;
+                                pos = ObjectData[i].meanings[0].partOfSpeech;
+                                phonetic = ObjectData[i].phonetics[0].text;
+                                
+                                document.getElementById(newDiv1.id).innerHTML = word;   
+                                document.getElementById(newDiv3.id).innerHTML = meaning;
+                                document.getElementById(newP1.id).innerHTML = pos;
+                                document.getElementById(newP2.id).innerHTML = phonetic;
+                                document.getElementById(newDiv6.id).innerHTML = example;
+                            }
+                        }
+                    })
+                    .catch(error => console.log("Error"));
+            }
+        </script>
+    </body>
+</html>

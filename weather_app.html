@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Weather App </title>
+
+        <link rel = "preconnect" href = "https://fonts.googleapis.com">
+		<link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+		<link href = "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Poppins:wght@500&display=swap" rel = "stylesheet">
+
+        <style>
+            @font-face
+            {
+                font-family : ThunderFont;
+                src : url(Godofthunder-0WO1P.ttf);
+            }
+
+            *
+			{
+				margin : 0;
+				padding : 0;
+			}	
+				
+			body
+			{
+				font-family: 'Poppins', sans-serif;
+				background-color : #ebebeb;
+			}
+			
+			nav
+			{
+				display : flex;
+				justify-content : space-around;
+				align-items : center;
+				height : 9.3708vh;
+				background-color : skyblue;
+				color : black;
+			}
+			
+			.leftheader
+			{
+				font-size : 3rem;
+                font-family : ThunderFont;
+                color : black;
+			}
+
+			.rightheader
+			{
+				display : flex;
+				justify-content : center;
+			}
+			
+			ul
+			{
+				display : flex;
+				justify-content : center;
+				font-size : 1.04rem;
+			}
+			
+			ul li
+			{
+				list-style : none;
+				margin : 0 2.1484vw;
+			}
+			
+			a
+			{
+				text-decoration : none;
+				color : black;				
+			}
+
+			input
+			{
+				height : 4.0161vh;
+				width : 350px;
+				border-radius : 8px;
+				border : 0.5px solid gray;
+				margin-left : 2.604vw;
+				background-color : whitesmoke;
+				color : gray;
+				text-indent : 10px;
+				font-family : 'Poppins', sans-serif;
+			}
+
+			button
+			{
+				height : 4.0161vh;
+				width : 90px;
+				margin-left : 0.651vw;
+				background-color : black;
+				color : white;
+				border : none;
+				font-size : 0.9rem;
+				font-family : 'Poppins', sans-serif;
+				border-radius : 8px;
+				cursor : pointer;
+			}
+
+			main
+			{
+				display : flex;
+				justify-content : space-around;
+				align-items : center;
+			}
+
+			.container
+			{
+				width : 58.59%;
+				height : 66.9344vh;
+				background-color : white;
+				margin-top : 7.8313vh;
+				border-radius : 30px;
+				display : flex;
+				flex-direction : column;
+			}
+
+			.top
+			{
+				width : 100%;
+				height : 20.0803vh;
+				display : flex;
+				align-items: center;
+			}
+
+			.top1
+			{
+				width : 42%;
+				height : 100%;
+				border-radius : 20px;
+				display : flex;
+				align-items : center;
+				justify-content : space-around;
+				font-family : ThunderFont;
+				font-size : 4rem;
+			}
+
+			.top2
+			{
+				width : 23%;
+				height : 100%;
+				display : flex;
+				justify-content : flex-start;
+				align-items : center;
+				font-family : ThunderFont;
+			}
+
+			.top2cont
+			{
+				width : 100%;
+				height : 100%;
+				display : flex;
+				align-items : center;
+				justify-content : flex-start;
+				font-size : 3rem;
+			}
+			
+			.top3
+			{
+				width : 35%;
+				height : 100%;
+				border-radius : 20px;
+				display : flex;
+				font-size : 1.4rem;
+				margin-top : 2.0080vh;
+				color : black;
+			}
+
+			.t3left
+			{
+				width : 70%;
+				height : 100%;
+				border-radius : 20px;
+			}
+
+			.t3la
+			{
+				width : 100%;
+				height : 6.6934vh;
+				border-radius : 20px;
+				display : flex;
+				justify-content : flex-start;
+				align-items : center;
+			}
+
+			.t3lb
+			{
+				width : 100%;
+				height : 6.6934vh;
+				display : flex;
+				justify-content : flex-start;
+				align-items : center;
+			}
+
+			.t3lc
+			{
+				width : 100%;
+				height : 6.6934vh;
+				display : flex;
+				justify-content : flex-start;
+				align-items : center;
+			}
+
+			.t3right
+			{
+				width : 20%;
+				height : 100%;
+				border-radius : 20px;
+			}
+
+			.t3ra
+			{
+				width : 100%;
+				height : 6.6934vh;
+				border-radius : 20px;
+				display : flex;
+				justify-content : flex-start;
+				align-items : center;
+			}
+
+			.t3rb
+			{
+				width : 100%;
+				height : 6.6934vh;
+				border-radius : 20px;
+				display : flex;
+				justify-content : flex-start;
+				align-items : center;
+			}
+			
+			.t3rc
+			{
+				width : 100%;
+				height : 6.6934vh;
+				border-radius : 20px;
+				display : flex;
+				justify-content : flex-start;
+				align-items : center;
+			}
+
+			.bottom
+			{
+				width : 100%;
+				height : 44.1767vh;
+				margin-top : 2.6774vh;
+				display : flex;
+				border-top : 2px solid gray;
+				color : gray;
+			}
+
+			.bottom1
+			{
+				width : 50%;
+				height : 100%;
+				border-radius : 20px;
+				display : flex;
+				justify-content : space-around;
+				font-size : 1.4rem;
+			}
+
+			.b1left
+			{
+				width : 35%;
+				height : 100%;
+			}
+
+			.b1lefta
+			{
+				width : 100%;
+				height : 14.7256vh;
+				display : flex;
+				align-items : center;
+			}
+
+			.b1leftb
+			{
+				width : 100%;
+				height : 14.7256vh;
+				display : flex;
+				align-items : center;
+			}
+
+			.b1leftc
+			{
+				width : 100%;
+				height : 14.7256vh;
+				display : flex;
+				align-items : center;
+			}
+
+			.b1right
+			{
+				width : 35%;
+				height : 100%;
+			}
+
+			.b1righta
+			{
+				width : 100%;
+				height : 14.7256vh;
+				display : flex;
+				align-items : center;
+				justify-content : flex-end;
+			}
+
+			.b1rightb
+			{
+				width : 100%;
+				height : 14.7256vh;
+				display : flex;
+				align-items : center;
+				justify-content : flex-end;
+			}
+
+			.b1rightc
+			{
+				width : 100%;
+				height : 14.7256vh;
+				display : flex;
+				align-items : center;
+				justify-content : flex-end;
+			}
+
+			.bottom2
+			{
+				width : 50%;
+				height : 100%;
+				border-radius : 20px;
+				display : flex;
+				justify-content : space-around;
+				font-size : 1.4rem;
+			}
+
+			.b2left
+			{
+				width : 35%;
+				height : 100%;
+			}
+
+			.b2lefta
+			{
+				width : 100%;
+				height : 14.7256vh;
+				display : flex;
+				align-items : center;
+			}
+
+			.b2leftb
+			{
+				width : 100%;
+				height : 14.7256vh;
+				display : flex;
+				align-items : center;
+			}
+
+			.b2leftc
+			{
+				width : 100%;
+				height : 14.7256vh;
+				display : flex;
+				align-items : center;
+			}
+
+			.b2right
+			{
+				width : 35%;
+				height : 100%;
+			}
+
+			.b2righta
+			{
+				width : 100%;
+				height : 14.7256vh;
+				display : flex;
+				align-items : center;
+				justify-content : flex-end;
+			}
+
+			.b2rightb
+			{
+				width : 100%;
+				height : 14.7256vh;
+				display : flex;
+				align-items : center;
+				justify-content : flex-end;
+			}
+
+			.b2rightc
+			{
+				width : 100%;
+				height : 14.7256vh;
+				display : flex;
+				align-items : center;
+				justify-content : flex-end;
+			}
+
+            footer
+			{
+				background-color : skyblue;
+				height : 8.0321vh;
+				display : flex;
+                align-items : center;
+				margin-top : 7.8313vh;
+				color : black;
+			}
+			
+			footer div
+			{
+				margin-left : 82.6823vw;
+                font-size : 1.04rem;
+			}
+
+			@media only screen and (min-width: 320px)
+            {   
+                html
+                {
+                    font-size : 130%;
+                }
+
+                .leftheader
+                {
+                    display : none;
+                }
+
+				.middleheader
+				{
+					width : 80%;
+					height : 50%;
+					display : flex;
+					align-items : center;
+					justify-content: space-between;
+				}
+
+				input
+				{
+					height : 100%;
+					width : 67%;
+					font-size : 200%;
+					text-indent : 25px;
+					border-radius : 25px;
+					border : 3px solid black;
+					background-color : white;
+				}
+
+				button
+				{
+					height : 100%;
+					width : 26%;
+					font-size : 210%;
+					border-radius : 25px;
+				}
+
+                .rightheader
+                {
+                    display : none;
+                }
+
+				.container
+				{
+					width : 90%;
+				}
+
+				.top
+				{
+					height : 22.7577vh;
+				}
+
+				.top1
+				{
+					width : 70%;
+					font-size : 700%;
+				}
+
+				.top2
+				{
+					width : 30%;
+					margin-top : 0.8vh;
+				}
+
+				.top3
+				{
+					display : none;
+				}
+
+				.bottom
+				{
+					margin-top : 0vh;
+				}
+
+				.bottom1, .bottom2
+				{
+					font-size : 220%;
+				}
+
+				.b1left, .b1right, .b2left, .b2right
+				{
+					width : 50%;
+				}
+
+				.b1lefta, .b1leftb, .b1leftc
+				{
+					margin-left : 2.3vh;
+				}
+
+				.b2lefta, .b2leftb, .b2leftc
+				{
+					margin-left : 2vh;
+				}
+
+				.b1righta, .b2righta, .b1rightb, .b2rightb, .b2rightc
+				{
+					justify-content : center;
+					margin-left : 1vh;
+				}
+
+				footer
+                {
+                    justify-content : space-around;
+                }
+
+                footer div
+                {
+                    margin-left : 0px;
+                    font-size : 150%;
+                }
+			}
+
+			@media only screen and (min-width: 1000px)
+            {   
+                html
+                {
+                    font-size : 100%;
+                }
+
+                .leftheader
+                {
+					display: block;
+                    font-size : 3rem;
+                }
+
+				.middleheader
+				{
+					display: none;
+				}
+
+                .rightheader
+                {
+                    display : flex;
+					font-size : 1.04rem;
+                }
+
+				input
+				{
+					height : 4.0161vh;
+					width : 350px;
+					border-radius : 8px;
+					border : 0.5px solid gray;
+					margin-left : 2.604vw;
+					background-color : whitesmoke;
+					color : gray;
+					text-indent : 10px;
+					font-family : 'Poppins', sans-serif;
+					font-size : 0.9rem;
+				}
+
+				button
+				{
+					height : 4.0161vh;
+					width : 90px;
+					margin-left : 0.651vw;
+					background-color : black;
+					color : white;
+					border : none;
+					font-size : 0.9rem;
+					font-family : 'Poppins', sans-serif;
+					border-radius : 8px;
+					cursor : pointer;
+				}
+
+				.container
+				{
+					width : 58.59%;
+				}
+
+				.top
+				{
+					height : 20.0803vh;
+				}
+
+				.top1
+				{
+					width : 42%;
+					font-size : 4rem;
+				}
+
+				.top2
+				{
+					width : 23%;
+					margin-top : 0px;
+				}
+
+				.top3
+				{
+					display : flex;
+				}
+
+				.bottom
+				{
+					margin-top : 2.6774vh;
+				}
+
+				.bottom1, .bottom2
+				{
+					font-size : 1.4rem;
+				}
+
+				.b1left, .b1right, .b2left, .b2right
+				{
+					width : 35%;
+				}
+
+				.b1lefta, .b1leftb, .b1leftc
+				{
+					margin-left : 0vh;
+				}
+
+				.b2lefta, .b2leftb, .b2leftc
+				{
+					margin-left : 0vh;
+				}
+
+				.b1righta, .b2righta, .b1rightb, .b2rightb, .b2rightc
+				{
+					justify-content : flex-end;
+					margin-left : 0vh;
+				}
+
+				footer
+                {
+                    justify-content : flex-start;
+                }
+
+                footer div
+                {
+                    margin-left : 82.6823vw;;
+                    font-size : 1.04rem;
+                }
+			}
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+				<div class = "leftheader"> Weather App </div>
+
+				<div class = "middleheader">
+					<input id = "input1" placeholder = "Enter a City">
+
+					<button onclick = "search()"> Go </button>
+				</div>
+				
+				<div class = "rightheader"> 
+					<ul>
+						<li> <a href = "index.html"> Home </a> </li>
+						<li> <a href = "https://github.com/am2k2" target = "_blank"> Github </a> </li>		
+					</ul>
+
+					<input id = "input2" placeholder = "Enter a City">
+
+					<button onclick = "search()"> Go </button>
+				</div>
+			</nav>
+        </header>
+
+        <main>
+			<div class = "container">
+				<div class = "top">
+					<div class = "top1" id = "city"> City </div>
+
+					<div class = "top2"> 
+						<div class = "top2cont" id = "temp"> TEMP </div>
+					</div>
+
+					<div class = "top3">
+						<div class = "t3left">
+							<div class = "t3la">
+								Feels Like
+							</div>
+							
+							<div class = "t3lb">
+								Max Temperature
+							</div>
+	
+							<div class = "t3lc">
+								Min Temperature
+							</div>
+						</div>
+
+						<div class = "t3right">
+							<div class = "t3ra" id = "feels_like">
+								NA
+							</div>
+							
+							<div class = "t3rb" id = "max_temp">
+								NA
+							</div>
+	
+							<div class = "t3rc" id = "min_temp">
+								NA
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class = "bottom">
+					<div class = "bottom1">
+						<div class = "b1left">
+							<div class = "b1lefta">
+								Humidity
+							</div>
+	
+							<div class = "b1leftb">
+								Wind Degrees
+							</div>
+							
+							<div class = "b1leftc">
+								Wind Speed
+							</div>
+						</div>
+
+						<div class = "b1right">
+							<div class = "b1righta" id = "humidity">
+								NA
+							</div>
+
+							<div class = "b1rightb" id = "wind_degrees">
+								NA
+							</div>
+
+							<div class = "b1rightb" id = "wind_speed">
+								NA
+							</div>
+						</div>
+					</div>
+
+					<div class = "bottom2">
+						<div class = "b2left">
+							<div class = "b2lefta">
+								Cloud
+							</div>
+	
+							<div class = "b2leftb">
+								Sunrise (IST)
+							</div>
+							
+							<div class = "b2leftc">
+								Sunset (IST)
+							</div>
+						</div>
+
+						<div class = "b2right">
+							<div class = "b2righta" id = "cloud_pct">
+								NA
+							</div>
+	
+							<div class = "b2rightb" id = "sunrise">
+								NA
+							</div>
+							
+							<div class = "b2rightc" id = "sunset">
+								NA
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+        <footer>
+            <div>
+				&#169 AM's Portfolio 2023
+			</div>
+        </footer>
+
+        <script>
+
+			function search()
+			{
+				if(screen.width < 1000)
+					var city = document.getElementById("input1").value;
+				else
+				var city = document.getElementById("input2").value;
+				city = city.trim();
+
+				var cloud_pct = 0;
+				var feels_like = 0;
+				var humidity = 0;
+				var max_temp = 0;
+				var min_temp = 0;
+				var sunrise = 0;
+				var sunset = 0;
+				var temp = 0;
+				var wind_degrees = 0;
+				var wind_speed = 0; 
+				var unix_timestamp = 0;
+				var date = 0;
+				var hours = 0;
+				var minutes = 0;
+				var seconds = 0;
+				var formattedTime = 0;
+
+				const options = {
+				method: 'GET',
+				headers: {
+					'X-RapidAPI-Key': '84a7cea511msh6886bc90dd63789p1f5f7ejsn2e5905183cfc',
+					'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+				}
+				};
+				
+				var url = "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=" + city;	
+				fetch(url, options)
+					.then(response => {
+						return response.json();
+					})
+					.then(ObjectData => {
+						if(Object.keys(ObjectData).length == 1)
+						{
+							cloud_pct = "NA";
+							feels_like = "NA";
+							humidity = "NA";
+							max_temp = "NA";
+							min_temp = "NA";
+							sunrise = "NA";
+							sunset = "NA";
+							temp = "TEMP";
+							wind_degrees = "NA";
+							wind_speed = "NA";
+							city = "CITY";
+
+							document.getElementById("input").value = "";
+							alert("Entered City name is invalid.");
+						}
+						else
+						{
+							cloud_pct = ObjectData.cloud_pct + "%";
+							feels_like = ObjectData.feels_like + " &deg;C";
+							humidity = ObjectData.humidity + "%";
+							max_temp = ObjectData.max_temp + " &deg;C";
+							min_temp = ObjectData.max_temp + " &deg;C";
+							sunrise = ObjectData.sunrise;
+							sunset = ObjectData.sunset;
+							temp = ObjectData.temp + " &deg;C";
+							wind_degrees = ObjectData.wind_degrees;
+							wind_speed = ObjectData.wind_speed + " m/h";
+
+							
+							unix_timestamp = sunrise;
+							date = new Date(unix_timestamp * 1000);
+							hours = date.getHours();
+							minutes = "0" + date.getMinutes();
+							seconds = "0" + date.getSeconds();
+							formattedTime = hours + ':' + minutes.substr(-2);
+							sunrise = formattedTime;
+
+							unix_timestamp = sunset;
+							date = new Date(unix_timestamp * 1000);
+							hours = date.getHours();
+							minutes = "0" + date.getMinutes();
+							seconds = "0" + date.getSeconds();
+							formattedTime = hours + ':' + minutes.substr(-2);
+							sunset = formattedTime;
+						}
+						
+						
+						document.getElementById("city").innerHTML = city;
+						document.getElementById("temp").innerHTML = temp;
+						document.getElementById("feels_like").innerHTML = feels_like;
+						document.getElementById("min_temp").innerHTML = min_temp;
+						document.getElementById("max_temp").innerHTML = max_temp;
+						document.getElementById("humidity").innerHTML = humidity;
+						document.getElementById("cloud_pct").innerHTML = cloud_pct;
+						document.getElementById("wind_degrees").innerHTML = wind_degrees;
+						document.getElementById("wind_speed").innerHTML = wind_speed;
+						document.getElementById("cloud_pct").innerHTML = cloud_pct;
+						document.getElementById("sunrise").innerHTML = sunrise;
+						document.getElementById("sunset").innerHTML = sunset;
+					})
+					.catch(error => console.log("Error"));
+			}
+			
+        </script>
+    </body>
+</html>

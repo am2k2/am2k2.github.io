@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title> Calculator </title>
+
+		<link rel = "preconnect" href = "https://fonts.googleapis.com">
+		<link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+		<link href = "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Poppins:wght@500&display=swap" rel = "stylesheet">
+
+		<style>
+			@font-face {
+                    font-family : NeoEuler;
+                    src : url(NeoEuler-VGO00.otf);
+                }
+
+				@font-face {
+                    font-family : Digital;
+                    src : url(digital-7.regular.ttf);
+                }
+
+			*
+			{
+				margin : 0;
+				padding : 0;
+			}
+
+			body
+			{
+				font-family: 'Poppins', sans-serif;
+			}
+
+			nav
+			{
+				height : 9.3708vh;
+				display : flex;
+				align-items : center;
+				justify-content : space-around;
+				color : white;
+				background-color : black;
+			}
+
+			.leftheader
+			{
+				font-size : 2.4rem;
+				font-family : NeoEuler;
+			}
+
+			ul
+			{
+				display : flex;
+				justify-content : center;
+				font-size : 1.1rem;
+			}
+
+			ul li
+			{
+				list-style : none;
+				margin : 0 2.1484vw;
+			}
+
+			a
+			{
+				text-decoration : none;
+				color : white;
+			}
+
+			main
+			{
+				display : flex;
+				flex-direction : column;
+				align-items : center;
+			}
+
+			.container
+			{
+				width : 29.30%;
+				height : 78.9826vh;
+				display : flex;
+				flex-direction : column;
+				align-items : center;
+				margin-top : 1.8072vh;
+				background-color : black;
+				border-radius : 3.3467vh;
+				border : none;
+			}
+
+			.disp
+			{
+				width : 88.44%;
+				height : 10.7095vh;
+				background-color : black;
+				color : white;
+				font-size : 4rem;
+				font-family : Digital;
+				display : flex;
+				align-items : center;
+				justify-content : flex-end;
+				overflow : auto;
+				border : 0.4016vh solid white;
+				border-radius : 2.6774vh;
+				margin-top : 2.0080vh;
+			}
+
+			.btns
+			{
+				width : 100%;
+			}
+
+			p
+			{
+				margin-right : 6.28%;
+				margin-top : 1.3387vh;
+				overflow : auto;
+			}
+
+			.r1
+			{
+				width : 100%;
+				height : 12.5837vh;
+				display : flex;
+				align-items : center;
+				justify-content : space-evenly;
+				margin-top : 1.3387vh;
+			}
+
+			.r2
+			{
+				width : 100%;
+				height : 12.5837vh;
+				display : flex;
+				align-items : center;
+				justify-content : space-evenly;
+			}
+
+			.r3
+			{
+				width : 100%;
+				height : 12.5837vh;
+				display : flex;
+				align-items : center;
+				justify-content : space-evenly;
+			}
+
+			.r4
+			{
+				width : 100%;
+				height : 12.5837vh;
+				display : flex;
+				align-items : center;
+				justify-content : space-evenly;
+			}
+
+			.r5
+			{
+				width : 100%;
+				height : 12.5837vh;
+				display : flex;
+				align-items : center;
+				justify-content : space-evenly;
+			}
+
+			.btn
+			{
+				width : 10.7095vh;
+				height : 10.7095vh;
+				border : none;
+				border-radius: 10.7095vh;
+				cursor : pointer;
+				font-size : 1.8rem;
+				font-family : 'Poppins', sans-serif;
+				background-color : rgb(51, 51, 51);
+				color : white;
+			}
+
+			footer
+			{
+				display : flex;
+				align-items : center;
+				justify-content : space-around;
+				height : 8.0321vh;
+				margin-top : 1.8072vh;
+				background-color : black;
+				font-size : 1.1rem;
+				color : white;
+			}
+
+			.footerdiv
+			{
+				margin-left : 82.6823vw;
+			}
+
+			@media only screen and (min-width: 320px)
+            {   
+                html
+                {
+                    font-size : 130%;
+                }
+
+                .leftheader
+                {
+                    font-size : 500%;
+                }
+
+                .rightheader
+                {
+                    display : none;
+                }
+
+                .container
+                {
+                    width : 90%;
+                }
+
+				.disp
+				{
+					font-size : 700%;
+				}
+
+				.btn
+				{
+					height : 8.5vh;
+					width : 8.5vh;
+					border-radius : 8.5vh;
+					font-size : 300%;
+				}
+
+				footer
+                {
+                    justify-content : center;
+                }
+
+                .footerdiv
+                {
+                    margin-left : 0px;
+                    font-size : 150%;
+                }
+			}
+
+			@media only screen and (min-width: 1000px)
+            {   
+                html
+                {
+                    font-size : 100%;
+                }
+
+                .leftheader
+                {
+                    font-size : 2.4rem;
+                }
+
+                .rightheader
+                {
+                    display : block;
+                }
+
+                .container
+                {
+                    width : 29.30%;
+                }
+
+				.disp
+				{
+					font-size : 4rem;
+				}
+
+				.btn
+				{
+					width : 10.7095vh;
+					height : 10.7095vh;
+					border-radius : 10.7095vh;
+					font-size : 1.8rem;
+				}
+
+				footer
+                {
+                    justify-content : flex-start;
+                }
+
+                .footerdiv
+                {
+                    margin-left : 82.6823vw;
+                    font-size : 1.1rem;
+                }
+			}
+		</style>
+	</head>
+	
+	<body>
+		<header>
+			<nav>
+				<div class = "leftheader"> Calculator </div>
+
+				<div class = "rightheader"> 
+					<ul>
+						<li> <a href = "index.html"> Home </a> </li>
+						<li> <a href = "https://en.wikipedia.org/wiki/Calculator" target = "_blank"> About </a> </li>
+						<li> <a href = "https://github.com/am2k2" target = "_blank"> Github </a> </li>
+						<li> &#9993 apurbamondal2k2@gmail.com </li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<div class = "container">
+				<div class = "disp"> <p id = "display"> 0 </p></div>
+
+				<div class = "btns">
+					<div class = "r1">
+						<button class = "btn" onclick = "clear_button()" style = "background-color : orangered;"> C </button>
+						<button class = "btn" onclick = "read_exp('%')" style = "background-color : orangered;"> % </button>
+						<button class = "btn" onclick = "delete_button()" style = "background-color : orangered;"> X </button>
+						<button class = "btn" onclick = "read_exp('/')" style = "background-color : orangered;"> / </button>
+					</div>
+					
+					<div class = "r2">
+						<button class = "btn" onclick = "read_exp('7')"> 7 </button>
+						<button class = "btn" onclick = "read_exp('8')"> 8 </button>
+						<button class = "btn" onclick = "read_exp('9')"> 9 </button>
+						<button class = "btn" onclick = "read_exp('*')" style = "background-color : orangered;"> * </button>
+					</div>
+
+					<div class = "r3">
+						<button class = "btn" onclick = "read_exp('4')"> 4 </button>
+						<button class = "btn" onclick = "read_exp('5')"> 5 </button>
+						<button class = "btn" onclick = "read_exp('6')"> 6 </button>
+						<button class = "btn" onclick = "read_exp('+')" style = "background-color : orangered;"> + </button>
+					</div>
+					
+					<div class = "r4">
+						<button class = "btn" onclick = "read_exp('1')"> 1 </button>
+						<button class = "btn" onclick = "read_exp('2')"> 2 </button>
+						<button class = "btn" onclick = "read_exp('3')"> 3 </button>
+						<button class = "btn" onclick = "read_exp('-')" style = "background-color : orangered;"> - </button>
+					</div>
+					
+					<div class = "r5">
+						<button class = "btn" onclick = "read_exp('00')"> 00 </button>
+						<button class = "btn" onclick = "read_exp(0)"> 0 </button>
+						<button class = "btn" onclick = "read_exp('.')"> . </button>
+						<button class = "btn" onclick = "calculate()" style = "background-color : orangered;"> = </button>
+					</div>
+				</div>
+			</div>	
+		</main>
+
+		<footer>
+			<div class = "footerdiv">
+				&#169 AM's Portfolio 2023
+			</div>
+		</footer>
+		
+		<script>
+			var exp = "";
+			var res = 0;
+			
+			function clear_button()
+			{
+				exp = "";
+				res = 0;
+				
+				document.getElementById("display").innerHTML = '0';
+			}
+			
+			function delete_button()
+			{
+				if(exp == "")
+					return;
+					
+				exp = exp.substring(0, exp.length - 1);
+				
+				if(exp == "")
+					document.getElementById("display").innerHTML = '0';
+				else			
+					document.getElementById("display").innerHTML = exp;
+			}
+			
+			function is_operator(symbol)
+			{
+				if(symbol == '/' || symbol == '*' || symbol == '+' || symbol == '-' || symbol == '%')
+					return 1;
+				else
+					return 0;
+			}
+			
+			function read_exp(input)
+			{
+				if(exp != "" && exp.length == 87)
+					return;
+
+				if(exp == "" && (input == '0' || input == '00'))
+					return;
+				
+				if(exp == "" && is_operator(input) == 1)
+					exp = '0' + input;
+				else if(exp.length > 1 && is_operator(input) == 1 && is_operator(exp.charAt(exp.length - 1)) == 1)
+					exp = exp.substring(0, exp.length - 1) + input;
+				else					
+					exp = exp + input;			
+												
+				document.getElementById("display").innerHTML = exp;
+			}
+			
+			function calculate()
+			{
+				if(exp == "")
+					return;
+				
+				res = eval(exp);
+				exp = res;
+				
+				document.getElementById("display").innerHTML = exp;
+			}
+		</script>
+	<body>
+</html>
